@@ -45,3 +45,7 @@ yhat = np.concatenate(yhat)
 y_true = np.concatenate(y_true)
 yhat[:,0] # predictions made by first classifier.
 # Compute accuracy here.
+M1 = np.sum(yhat[:,0]!=y_true)/len(y_true)
+M2 = np.sum(yhat[:,1]!=y_true)/len(y_true)
+M3 = np.sum(yhat[:,2]!=y_true)/len(y_true)
+print("accuracy for M1 is ", M1, " ,for M2 is ", M2, " for M3 is", M3)

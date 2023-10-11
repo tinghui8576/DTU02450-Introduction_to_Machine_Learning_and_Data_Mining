@@ -35,3 +35,11 @@ zB = np.abs(y_test - yhatB ) ** 2
 z = zA - zB
 CI = st.t.interval(1-alpha, len(z)-1, loc=np.mean(z), scale=st.sem(z))  # Confidence interval
 p = 2*st.t.cdf( -np.abs( np.mean(z) )/st.sem(z), df=len(z)-1)  # p-value
+
+
+# compute confidence interval of model B
+alpha = 0.05
+CIB = st.t.interval(1-alpha, df=len(zB)-1, loc=np.mean(zB), scale=st.sem(zB))  # Confidence interval
+
+print("Confidence interval of model A ", CIA, "Confidence interval of model B ", CIB)
+print("Confidnece interval of z ", CI, ' p-value ', p)
