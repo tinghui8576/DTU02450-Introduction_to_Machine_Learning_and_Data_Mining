@@ -5,7 +5,7 @@ from toolbox_02450 import dbplotf, train_neural_net, visualize_decision_boundary
 import numpy as np
 import torch
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/synth1.mat')
+mat_data = loadmat('synth1.mat')
 X = mat_data['X']
 X = X - np.ones((X.shape[0],1)) * np.mean(X,0)
 X_train = mat_data['X_train']

@@ -6,7 +6,7 @@ import numpy as np
 import sklearn.linear_model as lm
 
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/synth2.mat')
+mat_data = loadmat('synth2.mat')
 X = mat_data['X']
 X_train = mat_data['X_train']
 X_test = mat_data['X_test']

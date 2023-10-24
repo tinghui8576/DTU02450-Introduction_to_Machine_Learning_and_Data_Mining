@@ -8,7 +8,7 @@ from toolbox_02450 import train_neural_net, draw_neural_net
 from scipy import stats
 
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/wine2.mat')
+mat_data = loadmat('wine2.mat')
 attributeNames = [name[0] for name in mat_data['attributeNames'][0]]
 X = mat_data['X']
 y = mat_data['y']
@@ -21,7 +21,7 @@ C = 2
 X = stats.zscore(X);
 
 # Parameters for neural network classifier
-n_hidden_units = 2     # number of hidden units
+n_hidden_units = 1     # number of hidden units
 n_replicates = 2        # number of networks trained in each k-fold
 max_iter = 10000         # stop criterion 2 (max epochs in training)
 

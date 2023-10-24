@@ -12,7 +12,7 @@ font_size = 15
 plt.rcParams.update({'font.size': font_size})
 
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/wine2.mat')
+mat_data = loadmat('wine2.mat')
 X = mat_data['X']
 y = mat_data['y'].squeeze()
 attributeNames = [name[0] for name in mat_data['attributeNames'][0]]
@@ -24,7 +24,7 @@ C = len(classNames)
 # Create crossvalidation partition for evaluation
 # using stratification and 95 pct. split between training and test 
 K = 20
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.95, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.75, stratify=y)
 # Try to change the test_size to e.g. 50 % and 99 % - how does that change the 
 # effect of regularization? How does differetn runs of  test_size=.99 compare 
 # to eachother?
