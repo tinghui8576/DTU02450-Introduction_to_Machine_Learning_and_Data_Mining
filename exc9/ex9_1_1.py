@@ -9,7 +9,7 @@ from toolbox_02450.bin_classifier_ensemble import BinClassifierEnsemble
 from sklearn.linear_model import LogisticRegression
 
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/synth5.mat')
+mat_data = loadmat('../Data/synth6.mat')
 X = mat_data['X']
 y = mat_data['y'].squeeze()
 attributeNames = [name[0] for name in mat_data['attributeNames'].squeeze()]

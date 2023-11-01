@@ -6,7 +6,7 @@ from toolbox_02450 import dbplot, dbprobplot
 from sklearn.ensemble import RandomForestClassifier
 
 # Load Matlab data file and extract variables of interest
-mat_data = loadmat('../Data/synth7.mat')
+mat_data = loadmat('../Data/synth5.mat')
 X = mat_data['X']
 y = mat_data['y'].squeeze()
 attributeNames = [name[0] for name in mat_data['attributeNames'].squeeze()]

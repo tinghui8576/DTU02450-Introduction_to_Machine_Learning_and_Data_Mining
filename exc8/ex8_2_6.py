@@ -64,7 +64,7 @@ for (k, (train_index, test_index)) in enumerate(CV.split(X,y)):
     y_train = torch.Tensor(y[train_index])
     X_test = torch.Tensor(X[test_index,:])
     y_test = torch.Tensor(y[test_index])
-    
+    print(len(y_test))
     # Train the net on training data
     net, final_loss, learning_curve = train_neural_net(model,
                                                        loss_fn,
@@ -81,6 +81,7 @@ for (k, (train_index, test_index)) in enumerate(CV.split(X,y)):
     # Determine errors and errors
     se = (y_test_est.float()-y_test.float())**2 # squared error
     mse = (sum(se).type(torch.float)/len(y_test)).data.numpy() #mean
+    print('mse', mse)
     errors.append(mse) # store error rate for current CV fold 
     
     # Display the learning curve for the best net in the current fold

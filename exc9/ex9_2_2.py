@@ -24,6 +24,7 @@ C = len(classNames)
 K = 2
 CV = StratifiedKFold(K, shuffle=True)
 
+
 k=0
 for train_index, test_index in CV.split(X,y):
     print(train_index)

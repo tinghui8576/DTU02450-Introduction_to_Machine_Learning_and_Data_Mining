@@ -42,6 +42,7 @@ for train_index, test_index in CV.split(X):
     Error_train_nofeatures[k] = np.square(y_train-y_train.mean()).sum()/y_train.shape[0]
     Error_test_nofeatures[k] = np.square(y_test-y_test.mean()).sum()/y_test.shape[0]
 
+
     # Compute squared error with all features selected (no feature selection)
     m = lm.LinearRegression(fit_intercept=True).fit(X_train, y_train)
     Error_train[k] = np.square(y_train-m.predict(X_train)).sum()/y_train.shape[0]
