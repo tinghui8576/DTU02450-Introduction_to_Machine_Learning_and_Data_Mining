@@ -82,6 +82,7 @@ for (k, (train_index, test_index)) in enumerate(CV.split(X,y)):
     se = (y_test_est.float()-y_test.float())**2 # squared error
     mse = (sum(se).type(torch.float)/len(y_test)).data.numpy() #mean
     print('mse', mse)
+    print(np.square(y_test-y_test.mean()).sum(axis=0)/y_test.shape[0])
     errors.append(mse) # store error rate for current CV fold 
     
     # Display the learning curve for the best net in the current fold
@@ -100,6 +101,8 @@ summaries_axes[1].set_ylabel('MSE')
 summaries_axes[1].set_title('Test mean-squared-error')
     
 print('Diagram of best neural net in last fold:')
+print(len(attributeNames))
+print(len(net[0].bias.data.numpy()))
 weights = [net[i].weight.data.numpy().T for i in [0,2]]
 biases = [net[i].bias.data.numpy() for i in [0,2]]
 tf =  [str(net[i]) for i in [1,2]]

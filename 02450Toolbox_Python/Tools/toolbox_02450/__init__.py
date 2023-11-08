@@ -186,7 +186,6 @@ def rlr_validate(X,y,lambdas,cvf=10):
             test_error[f,l] = np.power(y_test-X_test @ w[:,f,l].T,2).mean(axis=0)
     
         f=f+1
-
     opt_val_err = np.min(np.mean(test_error,axis=0))
     opt_lambda = lambdas[np.argmin(np.mean(test_error,axis=0))]
     train_err_vs_lambda = np.mean(train_error,axis=0)
@@ -693,7 +692,7 @@ def train_neural_net(model, loss_fn, X, y,
         
         # A more complicated optimizer is the Adam-algortihm, which is an extension
         # of SGD to adaptively change the learing rate, which is widely used:
-        optimizer = torch.optim.Adam(net.parameters())
+        optimizer = torch.optim.Adam(net.parameters(), lr=0.001, weight_decay=1e-4)
         
         # Train the network while displaying and storing the loss
         print('\t\t{}\t{}\t\t\t{}'.format('Iter', 'Loss','Rel. loss'))
